@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-images img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-details {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .modal-close:hover {
+            background-color: #b02a37;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <!-- Product 1 -->
+        <div class="product-card" onclick="openModal(1)">
+            <div class="product-images">
+                <img src="https://via.placeholder.com/300x200" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <div class="product-name">Product 1</div>
+                <div class="product-price">$100</div>
+            </div>
+        </div>
+
+        <!-- Repeat for 12 products -->
+        <!-- Add additional products similarly -->
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modal-images">
+                <img src="https://via.placeholder.com/600x400" alt="Product Image">
+                <img src="https://via.placeholder.com/600x400?text=Image+2" alt="Product Image">
+            </div>
+        </div>
+    </div>
+    <script>
+        function openModal(productId) {
+            // Example: Fetch or display images dynamically based on productId
+            const modal = document.getElementById('product-modal');
+            const modalImages = document.getElementById('modal-images');
+            modalImages.innerHTML = `
+                <img src="https://via.placeholder.com/600x400?text=Product+${productId}+Image+1" alt="Product ${productId} Image">
+                <img src="https://via.placeholder.com/600x400?text=Product+${productId}+Image+2" alt="Product ${productId} Image">
+                <img src="https://via.placeholder.com/600x400?text=Product+${productId}+Image+3" alt="Product ${productId} Image">
+            `;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('product-modal');
+            modal.style.display = 'none';
+        }
+    </script>
+    
+</body>
+</html>

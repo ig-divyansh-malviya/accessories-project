@@ -1,0 +1,171 @@
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    /* Navbar Styles */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: rgb(203, 26, 26);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    .navbar .menu {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .navbar .menu a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        transition: color 0.3s;
+    }
+    
+    .navbar .menu a:hover {
+        color: #ff9800;
+    }
+    
+    .navbar .search-bar {
+        flex-grow: 1;
+        margin-left: 20px;
+        position: relative;
+    }
+    
+    .navbar .search-bar input {
+        width: 100%;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        transition: all 0.3s;
+    }
+    
+    .navbar .search-bar input:focus {
+        transform: scale(1.9);
+        outline: none;
+    }
+    
+    /* Video Background Styling */
+    .video-container {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60vh;
+        overflow: hidden;
+    }
+    
+    .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .content {
+        margin-top: 70px; /* Space for fixed navbar */
+    }
+    
+
+    /* Product Styles */
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    .product {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .product img {
+        width: 100%;
+        height: auto;
+    }
+    .product-info {
+        padding: 10px;
+        text-align: center;
+    }
+    .product-info h3 {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    .product-info p {
+        color: #555;
+        margin: 5px 0;
+    }
+    .product-info .price {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+    @media only screen and (max-width:600px){
+        
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        margin-top: auto;
+    }
+
+    .footer .social-links {
+        margin: 10px 0;
+    }
+
+    .footer .social-links a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    .footer .nav-links {
+        margin: 10px 0;
+    }
+
+    .footer .nav-links a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+    }
+
+    .footer .nav-links a:hover, .footer .social-links a:hover {
+        color: #f4a261;
+    }
+
+    @media (max-width: 600px) {
+        .footer .nav-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer .nav-links a {
+            margin: 5px 0;
+        }
+    }
